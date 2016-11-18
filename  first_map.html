@@ -5,6 +5,8 @@
 	<title>University Avenue map</title>
 	<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
 	<link rel="stylesheet"  href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css">
 	<link href="styles/map.css" rel="stylesheet">
 <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"> </script>
@@ -14,10 +16,11 @@
 
 <header>
 <h1> Which University Avenue businesses are at risk? </h1>
-<h2> DON'T FORGET TO MAKE A MEDIA QUERY!!!!! </h2>
 </header>
 
-<div id="mapid" style="width: 600px; height: 400px;"></div>
+<p>Map by Gabrielle Calise</p>
+
+<div id="mapid"></div>
 <script>
 
 var mymap = L.map('mapid').setView([29.653, -82.334], 16
@@ -48,6 +51,7 @@ var marker5=L.marker([29.652211, -82.337972]).addTo(mymap)
 			.bindPopup("<b>Know Where Coffee</b><br>1226 W University Ave, Gainesville, FL 32601")
 
 </script>
+
 
 </body>
 </html>

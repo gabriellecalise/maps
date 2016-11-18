@@ -4,11 +4,10 @@
 
 	<title>Florida Record Stores</title>
 	<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
 	<link rel="stylesheet"  href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css">
 	<link href="styles/map.css" rel="stylesheet">
-	<script src="js/places.json"></script>
-	<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"> </script>
 
 </head>
 
@@ -18,29 +17,32 @@
 <h1> Independent Record Shops in Florida</h1>
 </header>
 
-<h2> By Gabrielle Calise </h2>
+<p>Map by Gabrielle Calise</p>
 
-<div id="mapid" style="width: 600px; height: 400px;"></div>
+<div id="mapid"></div>
+
+<script src="js/places.json"></script>
+<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"> </script>
+
 <script>
-
-
 var mymap = L.map('mapid').setView([28.227, -83.084], 6
 );
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
-    id: 'gabriellecalise.253bbm12',
+    id: 'gabriellecalise.258h7482',
     accessToken: 'pk.eyJ1IjoiZ2FicmllbGxlY2FsaXNlIiwiYSI6ImNpdmthaGE1bzA5M2Eyem82aDlqbjBtNmwifQ.S4N8HmxbsrS_NKezvlWuAQ'
 }).addTo(mymap);
 
 
 for (var i=0; i < places.length; i++) {
 	L.marker( [places[i].latitude, places[i].longitude] )
-	.bindPopup('<h3>' + places[i].placeName + '</h3>' + '<p>' + places[i].address + '</p>' + '<img src="' + places[i].images + ' "alt="">').addTo( map );
+	.bindPopup('<b>' + places[i].placeName + '</b><br>' + places[i].address).addTo( mymap );
 }
 
 </script>
+
 
 </body>
 </html>
