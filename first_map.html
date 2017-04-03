@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>University Avenue map</title>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+	<link rel="stylesheet"  href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css">
+	<link href="styles/map.css" rel="stylesheet">
+<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"> </script>
+</head>
+
+<body>
+
+<header>
+<h1> Which University Avenue businesses are at risk? </h1>
+</header>
+
+<p>Map by Gabrielle Calise</p>
+
+<div id="mapid"></div>
+<script>
+
+var mymap = L.map('mapid').setView([29.653, -82.334], 16
+);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    id: 'gabriellecalise.24f0ci3n',
+    accessToken: 'pk.eyJ1IjoiZ2FicmllbGxlY2FsaXNlIiwiYSI6ImNpdmthaGE1bzA5M2Eyem82aDlqbjBtNmwifQ.S4N8HmxbsrS_NKezvlWuAQ'
+}).addTo(mymap);
+
+
+
+var marker1= L.marker([29.651839, -82.338600]).addTo(mymap)
+	 .bindPopup("<b>Leonardo's By The Slice</b><br>1245 W. University Ave.").openPopup();
+
+var marker2= L.marker([29.652039, -82.333472]).addTo(mymap)
+	 	.bindPopup("<b>The Jam</b><br>817 W. University Ave.")
+
+var marker3=L.marker([29.651862, -82.333455]).addTo(mymap)
+	.bindPopup("<b>Addiction Tattoos &amp; Piercing</b><br>819 W. University Ave.")
+
+var marker4=L.marker([29.652424, -82.340685]).addTo(mymap)
+		.bindPopup("<b>Burrito Brothers</b><br>1402 W. University Ave.")
+
+var marker5=L.marker([29.649150, -82.323666]).addTo(mymap)
+			.bindPopup("<b>Maude's Cafe</b><br>101 SE 2nd Place")
+
+</script>
+
+
+</body>
+</html>
